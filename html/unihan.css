@@ -1,0 +1,68 @@
+/*
+	Stylus, Copyright 2006-2008 Biologic Institute
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	    http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+*/
+BODY { color: #78783D; background-color: black; margin: 0 0 0 75px; font-size: 11pt; }
+
+H1 { clear: both; color: #CF7D31; font-size: 16pt; margin: 15px 0 0; font-weight: normal; }
+H2 { clear: both; color: #CF7D31; font-size: 14pt; margin: 25px 0 0; font-weight: normal; }
+P { padding: 2px 0 0; margin: 0 0 0 15px; }
+
+UL, LI { color: #78783D; }
+UL { padding-left: 15px; margin: 0 0 25px; }
+LI { float: left; width: 150px; margin: 2px 0 10px; display: block; }
+
+OBJECT { display: block; }
+
+TABLE, TD { padding: 0; margin: 0; border-collapse: collapse; border-spacing: 0; }
+
+A { color: #78783D; }
+A:link { }
+A:visited { }
+A:active { }
+A:hover { color: #CF7D31; }
+
+.ERROR { color: #CF7D31; }
+.SUCCESS { color: white; }
+#msgStatus { color: white; margin: 10px 0 0 150px; width: 500px; height: 25px; xborder: white solid 1px; }
+
+.geneparams { width: 850px; border: #78783D solid 1px; margin: 0 auto; padding: 15px 0 15px 0; }
+.geneparams LABEL { color: #CF7D31; }
+.geneparams INPUT { margin: 5px; }
+
+.help { padding: 0 10px 15px; border-bottom: #78783D solid 1px; }
+.help DL { padding: 5px 0 15px 15px; }
+.help DT { clear: both; float: left; width: 100px; margin: 5px 0 0 0;}
+.help DD { float: left; margin: 5px 0 0 20px; width: 500px; }
+.help H1 { font-size: 13pt; padding: 0; margin: 0; }
+.help H2 { font-size: 11pt; }
+.help CODE { color: #CF7D31; font-size: 10pt; }
+
+.nav { color: #78783D; font-size: 14pt; margin: 15px 0;}
+
+.set { border: #78783D solid 1px; width: 100px; }
+
+.row { height: 160px; margin: 0 0 25px 0; }
+.single { height: 140px; margin: 0; position: absolute; top: 15px; left: 15px; }
+
+.buttons {}
+.buttons A { background-color: #CF7D31; color: black; }
+.buttons A:link { text-decoration: none; }
+.buttons A:visited { text-decoration: none; }
+.buttons A:active { text-decoration: none; }
+.buttons A:hover { text-decoration: none; background-color: #78783D; color: black; }
+.buttons A div { float: left; background-color: inherit; width: 70px; text-align: center; padding: 5px 0 5px 0; }
+
+.unicode { position: absolute; padding: 4px; color: #CF7D31; }
+.han { width: 140px; font-size: 140px; font-family: "Arial Unicode", "Arial Unicode MS"; color: #78783D; }

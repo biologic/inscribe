@@ -1,0 +1,51 @@
+Stylus, Copyright 2006-2008 Biologic Institute.
+
+Inscribe 1.0, Biologic Institute
+http://www.biologicinstitute.org/research/stylus
+http://www.sourceforge.net/xyz
+
+ADDITIONAL SOFTWARE REQUIREMENTS
+- Arial Unicode Font (http://www.ascendercorp.com/msfonts/arial_unicode.html)
+- Adobe Flash 8.x or greater (http://www.adobe.com/products/flashplayer/)
+- Batik 1.6 or greater (http://xmlgraphics.apache.org/batik/)
+
+WHAT IS INSCRIBE?
+Inscribe is a suite of files designed to make creating input for Stylus
+easier. It also includes the publicly available Archetypes Stylus requiresf
+and a few sample Genes.
+
+INSTALLING INSCRIBE
+Researchers use Inscribe by means of three web sites: One for Archetypes,
+another for Genes, and the last for accessing the Inscribe tools. Researchers
+using Apache (1.x or 2.x) can create the web sites by adding the included
+apache.conf file, after modifying the contained paths, to their httpd.conf.
+Hosting Inscribe in other web servers will follow similar steps.
+
+INSTALLATION REQUIREMENTS
+Both the Inscribe tool and the Inscribe web site depend on the Arial Unicode
+font. The Archetype tool requires a suite of image files (.PNG) created from
+the font; all other pages rely on the font for proper display (meaning, the
+font must be installed on the browsing computer). Additionally, building new
+Archetypes requires Flash 8.x or above (see ).
+
+While the data files and scripts for building the images are present, they
+also rely on the SVG rasterizer, Batik, available from the Apache Project.
+To build the images, follow these steps:
+
+- Download Batik 1.6 or greater
+- Modify ./html/scripts/makeImages.pl to reference the locally installed
+  Batik package
+- From the ./html/scripts directory, run the buildImages.sh script
+
+Generating the entire suite of images takes about 1-2 hours depending on the
+hardware.
+
+BUILDING ARCHETYPES AND GENES
+Researchers may build their own archetypes and genes by browsing to the
+Inscribe web site. Selecting the "Archetype" option will bring up the Inscribe
+Flash tool. The tool has several steps by which a researcher creates the
+description of an archetype. Selecting the "Genes" option will bring up a page
+through which a research may create new genes by specifying various
+properties. See the Inscribe User Guide for more details.
+
+Please send all comments and questions to info@biologicinstitute.org.

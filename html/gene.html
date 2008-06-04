@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<!--
+	Stylus, Copyright 2006-2008 Biologic Institute
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	    http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+	-->
+<html xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<link href='unihan.css' rel='stylesheet' type='text/css' />
+		<script language='JavaScript' src='inscribe.js' type='text/javascript'></script>
+		<script>document.write('<title>Inscribe - Unicode ' + hanCode + '</title>');</script>
+	</head>
+<body style='margin: 15px;'>
+
+<table class='single'>
+	<tr>
+		<td valign='top'><div class='unicode'>U+<script>document.write(hanCode);</script></div><table class='set' height='100%'><tr><td class='han'><script>document.write(String.fromCharCode(parseInt(hanCode,16)));</script></td></tr></table></td>
+		</tr>
+	</table>
+
+<div class='geneparams'>
+	<div class='help'>
+		<h1>Overview</h1>
+		<p>
+			Inscribe builds Stylus genome files from the details of a Han character recorded through
+			<script>document.write(" <a href='inscribe.html?code=" + hanCode + "'>Inscribe</a>");</script>.
+			A command string determines the gene&apos;s size and shape.
+		<h1>Syntax</h1>
+		<p>The command string divides into three logical sections: Parameters affecting the entire gene, parameters affecting various
+			groups, and parameters affecting strokes. The syntax between these sections is common; for example, scaling is specified in
+			the same manner whether it&apos;s applied to the entire gene or to just one stroke. The overall command string is as follows:</p>
+
+			<blockquote>
+				<code>&lt;stroke order&gt;:&lt;head&gt;:&lt;tail&gt;:&lt;gene shaping&gt;:&lt;group shaping&gt;:&lt;stroke shaping&gt;</code>
+				</blockquote>
+
+			<p>All sections are optional. The group and stroke sections may occur multiple times (for different groups and strokes). Shaping, which
+				sets scale and translation, for the gene, groups, and strokes all use identical syntax.</p>
+				
+				<dl>
+					<dt>Command</dt><dd>Syntax</dd>
+					<dt>Stroke Order</dt><dd><code>o(#[r])+</code><br />Order in which to build strokes (may be a partial list)</dd>
+					<dt>Head</dt><dd><code>t#,#</code><br />Add an incoherent region from the specified point to the first stroke</dd>
+					<dt>Tail</dt><dd><code>t#,#</code><br />Add an incoherent region from the last stroke to the specified point</dd>
+					<dt>Gene Shaping</dt><dd><code>sx(+|-)#(%),sy(+|-)#(%),dx(+|-)#,dx(+|-)#</code><br />Scale and/or translate the entire gene</dd>
+					<dt>Group Shaping</dt><dd><code>g#(sx(+|-)#(%),sy(+|-)#(%),dx(+|-)#,dx(+|-)#)</code><br />Scale and/or translate the group</dd>
+					<dt>Stroke Shaping</dt><dd><code>s#(sx(+|-)#(%),sy(+|-)#(%),dx(+|-)#,dx(+|-)#)</code><br />Scale and/or translate the stroke</dd>
+					</dl>
+			
+			<h1>Examples</h1>
+			<p><code>o3,6,7r:sx15%,sy-10%</code><br />
+				Order strokes beginning with 3, 6, and 7 (followed by all others in natural order) reversing the direction
+					of stroke 7. Further expand the entire gene along the x-axis by 15% and compress it along the y-axis by 10%</p>
+					
+			<p><code>g3,dy+25,sx1.5:s2,sx-15%</code><br />
+				Offset group 3 by 25 while increasing it along the x-axis by 1.5 times. Further, reduce stroke 2 along its x-axis by 15%.</p>
+			</div>
+
+			<form method='GET' action='http://127.0.0.1/' onSubmit='saveGene(); return false;'>
+			<p><label>Commands:</label><input type='text' id='paramsGene' size='100' maxlength='150' /></p>
+			<p><input type='submit' value='Generate Gene' style='float: left; width: 115px;'/><div id='msgStatus'></div></p>
+			</form>
+	</div>
+
+
+</body>
+</html>
