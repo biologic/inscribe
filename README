@@ -1,8 +1,7 @@
-Stylus, Copyright 2006-2008 Biologic Institute.
-
+Stylus 1.2.0, Biologic Institute
 Inscribe 1.0, Biologic Institute
-http://www.biologicinstitute.org/research/stylus
-http://www.sourceforge.net/xyz
+
+http://biologicstylus.svn.sourceforge.net/svnroot/biologicstylus
 
 ADDITIONAL SOFTWARE REQUIREMENTS
 - Arial Unicode Font (http://www.ascendercorp.com/msfonts/arial_unicode.html)
@@ -26,7 +25,7 @@ Both the Inscribe tool and the Inscribe web site depend on the Arial Unicode
 font. The Archetype tool requires a suite of image files (.PNG) created from
 the font; all other pages rely on the font for proper display (meaning, the
 font must be installed on the browsing computer). Additionally, building new
-Archetypes requires Flash 8.x or above (see ).
+Archetypes requires Flash 8.x or above (see http://www.adobe.com/products/flashplayer/).
 
 While the data files and scripts for building the images are present, they
 also rely on the SVG rasterizer, Batik, available from the Apache Project.
