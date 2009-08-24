@@ -67,12 +67,14 @@
 				Offset group 3 by 25 while increasing it along the x-axis by 1.5 times. Further, reduce stroke 2 along its x-axis by 15%.</p>
 			</div>
 
-			<form method='GET' action='http://127.0.0.1/' onSubmit='saveGene(); return false;'>
+			<form method='GET' action='gene.html' onSubmit='saveGene(); return false;'>
 			<p><label>Commands:</label><input type='text' id='paramsGene' size='100' maxlength='150' /></p>
-			<p><input type='submit' value='Generate Gene' style='float: left; width: 115px;'/><div id='msgStatus'></div></p>
+			<p>
+				<script>document.write("<input type='hidden' name='code' value='" + hanCode + "' />");</script>
+				<input type='submit' value='Generate Gene' style='float: left; width: 115px;' />
+				<div id='msgStatus'></div>
+			</p>
 			</form>
 	</div>
-
-
 </body>
 </html>

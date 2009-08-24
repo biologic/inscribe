@@ -23,9 +23,14 @@ var hanCode;
 function parseArgs()
 {
 	var strArgs = window.location.search;
-	if (strArgs[0] == '?') strArgs = strArgs.substr(1);
+
+	if (strArgs.charAt(0) == '?')
+	{
+		strArgs = strArgs.substr(1);
+	}
 
 	var aryArgs = strArgs.split('&');
+
 	for (var i=0; i < aryArgs.length; i++)
 	{
 		if (aryArgs[i].indexOf('code=') == 0)
@@ -38,7 +43,7 @@ function parseArgs()
 function postHandler()
 {
 	if (xhr.readyState != 4) return;
-	
+
 	var strMsg;
 	var fError;
 
@@ -66,8 +71,10 @@ function postHandler()
 	}
 	
 	if (fError > 0)
+	{
 		strMsg = hanCode + ' failed to save -- ' + strMsg;
-	
+	}
+
 	setMsg(strMsg, fError);
 }
 
@@ -77,7 +84,6 @@ function doPost(strArgs)
 	xhr.open('POST', 'scripts/postIt.py', true);
 	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
 	xhr.send('code=' + hanCode + (strArgs.length ? '&' + strArgs : ''));
-	xhr.send();
 }
 
 function getHandler()
@@ -102,6 +108,7 @@ function doGet(strPath)
 function loadHan()
 {
 	setMsg('Loading Han ' + hanCode, 0);
+
 	doGet('../Archetypes/' + hanCode.substr(0,hanCode.length-3) + '000/' + hanCode + '.hcf');
 	return true;
 }
